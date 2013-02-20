@@ -1,5 +1,4 @@
 require 'myrr'
-require 'letters'
 require 'webmock/rspec'
 require 'simplecov'
 require 'simplecov-rcov'

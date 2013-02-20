@@ -1,5 +1,6 @@
 require 'faraday'
 require 'faraday_middleware'
+require 'csv'
 
 require "myrr/version"
 

@@ -1,6 +1,3 @@
-require 'csv'
-require 'json'
-
 module Myrr
   class Client
     attr_reader :uri
