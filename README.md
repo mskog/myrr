@@ -1,5 +1,7 @@
 # Myrr
 
+[![Code Climate](https://codeclimate.com/github/mskog/myrr.png)](https://codeclimate.com/github/mskog/myrr)
+
 TODO: Write a gem description
 
 ## Installation
