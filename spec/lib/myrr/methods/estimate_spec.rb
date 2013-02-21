@@ -12,13 +12,6 @@ describe Myrr::Methods::Estimate do
   subject{Myrr::Methods::Estimate.new(client,user_id, item_id)}
 
   describe "#perform" do
-    it "performs a GET request with the correct parameters" do
-      raw_response_file = File.new('spec/fixtures/estimate/single.txt')
-      stub = stub_request(:get, "#{uri}:#{port}/estimate/#{user_id}/#{item_id}").to_return(raw_response_file)
-      subject.perform
-      stub.should have_been_requested
-    end
-
     it "returns an Estimation" do
       raw_response_file = File.new('spec/fixtures/estimate/single.txt')
       stub = stub_request(:get, "#{uri}:#{port}/estimate/#{user_id}/#{item_id}").to_return(raw_response_file)

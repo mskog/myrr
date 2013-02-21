@@ -5,6 +5,7 @@ require 'csv'
 require "myrr/version"
 
 require 'myrr/methods/refresh'
+require 'myrr/methods/ready'
 require 'myrr/methods/add_preference'
 require 'myrr/methods/ingest'
 require 'myrr/methods/remove_preference'
