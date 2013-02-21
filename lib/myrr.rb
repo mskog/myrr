@@ -3,6 +3,7 @@ require 'faraday_middleware'
 require 'csv'
 
 require "myrr/version"
+require 'myrr/core_ext'
 
 require 'myrr/methods/refresh'
 require 'myrr/methods/ready'

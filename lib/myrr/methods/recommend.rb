@@ -1,6 +1,8 @@
 module Myrr
   module Methods
     class Recommend
+      ALLOWED_OPTIONS = [:how_many, :consider_known_items]
+      
       def initialize(client,user_id,options={})
         @client = client
         @user_id = user_id
@@ -9,7 +11,15 @@ module Myrr
 
       def perform
         @client.json_connection.get("/recommend/#{@user_id}") do |request|
-          request.params.merge!(@options)
+          request.params.merge!(sanitized_options)
+        end
+      end
+
+      private
+
+      def sanitized_options
+        @options.inject({}) do |hash, (key, value)|
+          hash[key.to_s.camelize] = value if ALLOWED_OPTIONS.include?(key); hash
         end
       end
     end

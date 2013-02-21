@@ -12,7 +12,7 @@ describe Myrr::Methods::Recommend do
   describe "#perform" do
     context "without options" do
       it "performs a GET request with the correct parameters" do
-        stub = stub_request(:get, "#{uri}:#{port}/recommend/#{user_id}")
+        stub = stub_request(:get, "#{uri}:#{port}/recommend/#{user_id}").with(:headers => {'Content-Type' => 'application/json'})
         subject.perform
         stub.should have_been_requested
       end
@@ -20,10 +20,26 @@ describe Myrr::Methods::Recommend do
 
     context "with additional arguments" do
       let(:number){5}
-      let(:options){{:howMany => number, :considerKnownItems => true}}
+      let(:options){{:how_many => number, :consider_known_items => true}}
 
       it "perfoms a GET request with the correct parameters" do
-        stub = stub_request(:get, "#{uri}:#{port}/recommend/#{user_id}").with(:query => {:howMany => number, :considerKnownItems => "true"})
+        stub = stub_request(:get, "#{uri}:#{port}/recommend/#{user_id}").with(
+          :query => {:howMany => number, :considerKnownItems => "true"},
+          :headers => {'Content-Type' => 'application/json'}
+        )
+        subject.perform
+      end
+    end
+
+    context "with illegal options" do
+      let(:number){5}
+      let(:options){{:how_many => number, :consider_known_items => true, :foo => 'bar'}}
+
+      it "perfoms a GET request with the correct parameters" do
+        stub = stub_request(:get, "#{uri}:#{port}/recommend/#{user_id}").with(
+          :query => {:howMany => number, :considerKnownItems => "true"},
+          :headers => {'Content-Type' => 'application/json'}
+        )
         subject.perform
       end
     end

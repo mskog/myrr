@@ -17,8 +17,8 @@ module Myrr
 
     def json_connection
       @json_connection ||= Faraday.new(base_uri) do |conn|
-        conn.request :json
         conn.response :json
+        conn.headers['Content-Type'] = 'application/json'
         conn.adapter Faraday.default_adapter
       end
     end
