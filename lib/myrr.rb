@@ -11,6 +11,7 @@ require 'myrr/methods/remove_preference'
 require 'myrr/methods/recommend'
 require 'myrr/methods/estimate'
 
+require 'myrr/estimation'
 require 'myrr/preference'
 require 'myrr/preferences'
 require 'myrr/client'

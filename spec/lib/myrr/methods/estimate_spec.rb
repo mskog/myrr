@@ -5,15 +5,27 @@ describe Myrr::Methods::Estimate do
   let(:port){8080}
   let(:client){Myrr::Client.new(uri,port)}
 
-  let(:preference){Myrr::Preference.new(1,2)}
+  let(:user_id){1}
+  let(:item_id){2}
+  let(:value){0.009714708}
 
-  subject{Myrr::Methods::Estimate.new(client,preference)}
+  subject{Myrr::Methods::Estimate.new(client,user_id, item_id)}
 
   describe "#perform" do
     it "performs a GET request with the correct parameters" do
-      stub = stub_request(:get, "#{uri}:#{port}/estimate/#{preference.user_id}/#{preference.item_id}")
+      raw_response_file = File.new('spec/fixtures/estimate/single.txt')
+      stub = stub_request(:get, "#{uri}:#{port}/estimate/#{user_id}/#{item_id}").to_return(raw_response_file)
       subject.perform
       stub.should have_been_requested
+    end
+
+    it "returns an Estimation" do
+      raw_response_file = File.new('spec/fixtures/estimate/single.txt')
+      stub = stub_request(:get, "#{uri}:#{port}/estimate/#{user_id}/#{item_id}").to_return(raw_response_file)
+      response = subject.perform
+      response.user_id.should eq user_id
+      response.item_id.should eq item_id
+      response.value.should eq value
     end
   end
 end

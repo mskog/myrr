@@ -1,13 +1,15 @@
 module Myrr
   module Methods
     class Estimate
-      def initialize(client,preference)
+      def initialize(client,user_id, item_id)
         @client = client
-        @preference = preference
+        @user_id = user_id
+        @item_id = item_id
       end
 
       def perform
-        @client.connection.get("/estimate/#{@preference.user_id}/#{@preference.item_id}")
+        response = @client.connection.get("/estimate/#{@user_id}/#{@item_id}")
+        Myrr::Estimation.new(@user_id, @item_id, response.body)
       end
     end
   end
