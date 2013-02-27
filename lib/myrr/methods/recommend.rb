@@ -19,7 +19,7 @@ module Myrr
 
       def sanitized_options
         @options.inject({}) do |hash, (key, value)|
-          hash[key.to_s.camelize] = value if ALLOWED_OPTIONS.include?(key); hash
+          hash[key.to_s.camelize_all_but_first] = value if ALLOWED_OPTIONS.include?(key); hash
         end
       end
     end
