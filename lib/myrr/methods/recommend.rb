@@ -10,9 +10,11 @@ module Myrr
       end
 
       def perform
+        response =
         @client.json_connection.get("/recommend/#{@user_id}") do |request|
           request.params.merge!(sanitized_options)
         end
+        Recommendations.new(response.body.map{|rec| rec.unshift(@user_id)})
       end
 
       private

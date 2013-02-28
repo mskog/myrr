@@ -13,6 +13,8 @@ require 'myrr/methods/remove_preference'
 require 'myrr/methods/recommend'
 require 'myrr/methods/estimate'
 
+require 'myrr/recommendation'
+require 'myrr/recommendations'
 require 'myrr/estimation'
 require 'myrr/preference'
 require 'myrr/preferences'
