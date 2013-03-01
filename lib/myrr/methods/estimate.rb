@@ -9,7 +9,7 @@ module Myrr
 
       def perform
         response = @client.connection.get("/estimate/#{@user_id}/#{@item_id}")
-        Myrr::Estimation.new(@user_id, @item_id, response.body)
+        Myrr::Estimation.new(@user_id, @item_id, response.body.to_f)
       end
     end
   end
