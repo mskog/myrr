@@ -12,12 +12,10 @@ module Myrr
     end
 
     module ClassMethods
+      attr_reader :allowed_options
+
       def allow_options(*options)
         @allowed_options = options
-      end
-
-      def allowed_options
-        @allowed_options
       end
     end
   end
