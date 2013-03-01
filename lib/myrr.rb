@@ -4,6 +4,7 @@ require 'csv'
 
 require "myrr/version"
 require 'myrr/core_ext'
+require 'myrr/sanitized_options'
 
 require 'myrr/methods/refresh'
 require 'myrr/methods/ready'
