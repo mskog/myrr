@@ -2,6 +2,7 @@
 
 [![Code Climate](https://codeclimate.com/github/mskog/myrr.png)](https://codeclimate.com/github/mskog/myrr)
 [![Build Status](https://travis-ci.org/mskog/myrr.png?branch=master)](https://travis-ci.org/mskog/myrr)
+[![Dependency Status](https://gemnasium.com/mskog/myrr.png)](https://gemnasium.com/mskog/myrr)
 
 A Ruby client for the [Myrrix](http://myrrix.com/) recommendation engine
 
