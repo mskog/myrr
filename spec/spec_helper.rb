@@ -1,13 +1,15 @@
+require 'coveralls'
+Coveralls.wear!
+
 require 'myrr'
 require 'webmock/rspec'
 require 'simplecov'
 require 'simplecov-rcov'
-require 'coveralls'
 
-Coveralls.wear!
-
-SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
-
+SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+  SimpleCov::Formatter::RcovFormatter,
+  Coveralls::SimpleCov::Formatter
+]
 SimpleCov.start
 
 RSpec.configure do |config|
