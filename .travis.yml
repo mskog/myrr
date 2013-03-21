@@ -1,8 +1,12 @@
+---
 language: ruby
 rvm:
-  - 1.9.3
-  - jruby-19mode
-  - 2.0.0
+- 1.9.3
+- jruby-19mode
+- 2.0.0
 branches:
   only:
-    - master
+  - master
+notifications:
+  hipchat:
+    - secure: "dwkwXY3hphGrxqxaGpAnuAVogYHXFK6SvWBmQE/81mSfyVh0LigKD+ME+mwL\nSMhopQrCFV4PA0YnMmxfX8jFEwVnyREdbAasmEUiOIMi1fiKUKsMBt4V1LMR\nJTrR5rYnvpJpgH2w79oerk9m/jvLxTikZhfCYGQRHDB0cLDdvg4="
