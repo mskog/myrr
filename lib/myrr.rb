@@ -13,6 +13,7 @@ require 'myrr/methods/ingest'
 require 'myrr/methods/remove_preference'
 require 'myrr/methods/recommend'
 require 'myrr/methods/estimate'
+require 'myrr/methods/estimate_many'
 require 'myrr/methods/most_popular_items'
 
 require 'myrr/recommendation'
