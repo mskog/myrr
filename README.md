@@ -9,9 +9,12 @@ A Ruby client for the [Myrrix](http://myrrix.com/) recommendation engine
 
 **Should not be used for anything serious. Can and will break functionality with every update.**
 
+**A major refactoring is coming soon and then I am planning on releasing this a gem**
+
 This will be released as a gem when it is ready.
 
 Tested with Myrrix versions:
+- 1.0.0-beta-1
 - 0.10
 - 0.9
 

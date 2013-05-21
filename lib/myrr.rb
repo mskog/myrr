@@ -15,6 +15,7 @@ require 'myrr/methods/recommend'
 require 'myrr/methods/estimate'
 require 'myrr/methods/estimate_many'
 require 'myrr/methods/most_popular_items'
+require 'myrr/methods/most_similar_items'
 
 require 'myrr/recommendation'
 require 'myrr/recommendations'
