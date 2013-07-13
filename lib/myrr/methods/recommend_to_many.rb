@@ -23,7 +23,7 @@ module Myrr
       private
 
       def user_ids_parameters
-        @user_ids.join(',')
+        @user_ids.join('/')
       end
     end
   end

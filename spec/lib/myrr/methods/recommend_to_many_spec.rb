@@ -5,7 +5,7 @@ describe Myrr::Methods::Recommend do
   let(:port){8080}
   let(:client){Myrr::Client.new(uri,port)}
   let(:user_ids){Array.new(20){rand(100)}}
-  let(:user_ids_parameter){user_ids.join(',')}
+  let(:user_ids_parameter){user_ids.join('/')}
   let(:options){{}}
 
   subject{Myrr::Methods::RecommendToMany.new(client,user_ids,options)}
